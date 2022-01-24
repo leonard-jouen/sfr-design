@@ -1,0 +1,341 @@
+
+/* FONTS */
+
+@font-face {
+    font-family: 'sfrregular';
+    src: url('../font/sfr-1.0-regular-webfont.woff2') format('woff2'),
+    url('../font/sfr-1.0-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sfrbold';
+    src: url('../font/sfr-1.0-bold-webfont.woff2') format('woff2'),
+    url('../font/sfr-1.0-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* BASES */
+
+* {
+    margin: 0;padding: 0;
+}
+
+*,
+*:after,
+*:before {
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --gris: #8d8c87;
+    --orange: #d45d2c;
+}
+
+body{
+    background-color: #ffffff;
+    font: 400 14px/1.3 'sfrregular', sans-serif;
+    overflow-x: hidden;
+    color: #3b1c06;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.wrap {max-width: 1140px;width:100%;margin: 0 auto;padding: 0 15px;}
+.wrap_form {max-width: 520px;width:100%;margin: 0 auto;padding: 0 15px;}
+.wrap_full {max-width: 1600px;width:100%;margin: 0 auto;padding: 0 15px;}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    resize: none;
+}
+
+/* GLOBALS */
+
+.error{
+    color: red;
+    font-weight: 700;
+}
+
+/* HEADER */
+
+#header .wrap{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#header .logo img{
+    width: 40%;
+    transition: all .2s;
+}
+
+#header .logo img:hover{
+    opacity: .7;
+}
+
+#header .menu ul{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    gap: 4rem;
+}
+
+#header .menu ul img{
+    width: 50px;
+    height: 50px;
+}
+
+#header .menu ul li a{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+    color: #000;
+    border-bottom: solid 3px rgba(0,0,0,0);
+    transition: all .1s;
+}
+
+#header .menu ul .desktop a:hover{
+    border-bottom: solid 3px #d90011;
+}
+
+#header .menu ul .mobile a:hover{
+    color: #d90011;
+}
+
+#header .menu .mobile{
+    display: none;
+}
+
+/* OFFRES */
+
+#offres .wrap_full{
+    position: relative;
+    background: url('../img/image-fond.jpg') no-repeat center/cover;
+    height: 600px;
+}
+
+#offres .wrap_full .offres_box{
+    position: absolute;
+    top: 10%;
+    left: 14%;
+    box-shadow: 0px 0px 18px 10px rgba(255,255,255,0.81);
+    -webkit-box-shadow: 0px 0px 18px 10px rgba(255,255,255,0.81);
+    -moz-box-shadow: 0px 0px 18px 10px rgba(255,255,255,0.81);
+    color: #ffffff;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* CONTACT FORM */
+
+#contact_form .wrap_form{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 4rem 0 4rem 0;
+}
+
+#contact_form .wrap_form .success_message h2{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    color: green;
+}
+
+#contact_form .wrap_form .success_message a{
+    border: 2px solid rgba(0,0,0,.25);
+    color: black;
+    font-family: 'sfrregular', sans-serif;
+    font-weight: 700;
+    padding: .8rem;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.14);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.14);
+    transition: all .3s;
+}
+
+#contact_form .wrap_form .success_message a:hover{
+    background-color: #d90011;
+    color: #ffffff;
+}
+
+#contact_form .wrap_form form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+#contact_form form{
+    width: 100%;
+}
+
+#contact_form form input,textarea{
+    border: 2px solid rgba(0,0,0,.25);
+    color: black;
+    font-family: 'sfrregular', sans-serif;
+    font-weight: 700;
+    padding: .8rem;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.14);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.14);
+    transition: all .3s;
+}
+
+#contact_form form input:hover:not(input[type=submit]),textarea:hover{
+    border: 2px solid rgba(0,0,0,.5);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.34);
+}
+
+#contact_form form input::placeholder,textarea::placeholder{
+    color: black;
+}
+
+#contact_form form textarea{
+    min-height: 150px;
+}
+
+#contact_form form input[type=email]{
+    width: 80%;
+}
+
+#contact_form form input[type=submit]{
+    width: 25%;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#contact_form form input[type=submit]:hover{
+    background-color: #d90011;
+    color: #ffffff;
+}
+
+/* FOOTER */
+
+#footer{
+    background-color: black;
+    padding: 1.5rem 0 5rem 0;
+    color: #ffffff;
+}
+
+#footer .wrap{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: .8rem
+}
+
+#footer .mini-fleche img{
+    width: 25px;
+    transition: all .2s;
+}
+
+#footer .mini-fleche img:hover{
+    opacity: .6;
+}
+
+#footer .menu ul{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+}
+
+#footer .menu ul li a{
+    border-bottom: solid 2px rgba(0,0,0,0);
+    transition: all .2s;
+}
+
+#footer .menu ul li a:hover{
+    border-bottom: solid 2px #d90011;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 850px) {
+    #header .menu .desktop{
+        display: none;
+    }
+
+    #header .menu .mobile{
+        display: block;
+    }
+
+    #header .menu .mobile a{
+        font-size: 2rem;
+    }
+
+    #offres .wrap_full{
+        height: 300px;
+    }
+
+    #offres .wrap_full .offres_box{
+        height: 200px;
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    #contact_form .wrap_form{
+        padding: 4rem 1rem 4rem 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    #offres .wrap_full .offres_box {
+        left: 5%;
+    }
+
+    #contact_form form input[type=submit]{
+        width: 55%;
+    }
+
+    #footer .menu ul{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    #footer .menu ul .separator{
+        display: none;
+    }
+}
